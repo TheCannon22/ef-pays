@@ -1,0 +1,29 @@
+#country-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.country-btn {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.country-btn:hover {
+    background-color: #005177;
+}
+
+.destination {
+    margin-bottom: 20px;
+}
+
+.destination img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
