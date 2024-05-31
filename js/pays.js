@@ -9,15 +9,15 @@ jQuery(document).ready(function($) {
     });
 
     // Load default country destinations (France)
-    loadDestinations('France');
+    afficherDestinations('France');
 
     // Add click event to country buttons
     $('.country-btn').on('click', function() {
         const country = $(this).data('country');
-        loadDestinations(country);
+        afficherDestinations(country);
     });
 
-    function loadDestinations(country) {
+    function afficherDestinations(country) {
         $.ajax({
             url: `${paysApi.root}pays/v1/destinations`,
             method: 'GET',
