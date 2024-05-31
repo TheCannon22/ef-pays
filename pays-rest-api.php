@@ -24,13 +24,13 @@ function pays_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'pays_enqueue_scripts');
 
 // Register REST API endpoint
-function register_pays_routes() {
+function enregister_pays_routes() {
     register_rest_route('pays/v1', '/destinations/', array(
         'methods' => 'GET',
         'callback' => 'get_pays_destinations',
     ));
 }
-add_action('rest_api_init', 'register_pays_routes');
+add_action('rest_api_init', 'enregister_pays_routes');
 
 function get_pays_destinations(WP_REST_Request $request) {
     $country = $request->get_param('country');
