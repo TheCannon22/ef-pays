@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
-    const countries = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
-    const menuContainer = $('#country-menu');
-    const destinationContainer = $('#country-destinations');
+    const pays = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
+    const conteneurDesPays = $('#country-menu');
+    const conteneurDestinations = $('#country-destinations');
 
     // Generate country menu
-    countries.forEach(country => {
-        menuContainer.append(`<button class="country-btn" data-country="${country}">${country}</button>`);
+    pays.forEach(country => {
+        conteneurDesPays.append(`<button class="country-btn" data-country="${country}">${country}</button>`);
     });
 
     // Load default country destinations (France)
@@ -26,9 +26,9 @@ jQuery(document).ready(function($) {
                 xhr.setRequestHeader('X-WP-Nonce', paysApi.nonce);
             },
             success: function(response) {
-                destinationContainer.empty();
+                conteneurDestinations.empty();
                 response.forEach(destination => {
-                    destinationContainer.append(`
+                    conteneurDestinations.append(`
                         <div class="destination">
                             <h3>${destination.title}</h3>
                             <img src="${destination.image}" alt="${destination.title}">
